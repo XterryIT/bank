@@ -1,0 +1,14 @@
+version: "2"
+sql:
+  - queries: "./db/query/"
+    schema: "./db/migration/"
+    engine: "postgresql"
+    gen:
+        go:
+            package: "tutorial"
+            out: "./db/sqlc"
+
+
+
+
+ 
