@@ -67,14 +67,14 @@ LIMIT $3
 OFFSET $4
 `
 
-type ListTranfersParams struct {
+type ListTransfersParams struct {
 	FromAccountID int64
 	ToAccountID   int64
 	Limit         int32
 	Offset        int32
 }
 
-func (q *Queries) ListTranfers(ctx context.Context, arg ListTranfersParams) ([]Transfer, error) {
+func (q *Queries) ListTransfers(ctx context.Context, arg ListTransfersParams) ([]Transfer, error) {
 	rows, err := q.db.QueryContext(ctx, listTranfers,
 		arg.FromAccountID,
 		arg.ToAccountID,
