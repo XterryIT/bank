@@ -1,3 +1,4 @@
+
 dockerup:
 	docker start postgres
 
@@ -22,4 +23,7 @@ migratedown:
 sqlc:
 	sqlc generate
 
-.PHONY: dockerup createdb dropdb postgres migrateup migratedown sqlc
+test:
+	go test -v -cover ./...
+
+.PHONY: dockerup createdb dropdb postgres migrateup migratedown sqlc test
